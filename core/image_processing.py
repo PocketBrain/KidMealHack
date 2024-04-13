@@ -45,7 +45,7 @@ def filter_dataframe(df: pd.DataFrame, threshold=25):
     return df_filtered
 
 
-def process_image(image, horizontal_shift_threshold=50, lang = "rus"):
+def process_image(image, horizontal_shift_threshold=50, lang="rus"):
     """
     Обрабатывает изображение, распознает текст и привязывает графику к текстовым блокам.
 

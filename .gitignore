@@ -14,3 +14,4 @@ venv.bak/
 model-q8_0.gguf
 test_files/
 outputs/
+llama-cpp-python/
