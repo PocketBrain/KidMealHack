@@ -94,7 +94,7 @@ def pipeline(
     system_tokens = get_system_tokens(model)
     tokens = system_tokens
     model.eval(tokens)
-    message_tokens = get_message_tokens(model=model, role="user", content=ocr_text)
+    message_tokens = get_message_tokens(model=model, role="user", content=FROM_TEXT_2_JSON_PROMPT+ocr_text)
     json_str = ""
     role_tokens = [model.token_bos(), BOT_TOKEN, LINEBREAK_TOKEN]
     tokens += message_tokens + role_tokens
