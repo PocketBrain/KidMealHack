@@ -9,7 +9,7 @@ import io
 def get_data(files: np.array = None):
     # Удалить путь, и поставить на вход np.array
     if files == None:
-        file_path = "test_files/Йогурт Агуша с персиком с 8 месяцев 2.7% 200 г.jpg"
+        file_path = "test_files/cola.jpg"
         image_np = np.array(Image.open(file_path))
     else:
         image_np = files
