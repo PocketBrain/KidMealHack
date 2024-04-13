@@ -114,6 +114,7 @@ def pipeline(
     tokens.extend(
         get_message_tokens(model=model, role="user", content=FROM_JSON_2_RULE_PROMPT)
     )
+    tokens += role_tokens
     rules = ""
     generator = model.generate(
         tokens,
