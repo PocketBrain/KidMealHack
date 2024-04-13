@@ -28,4 +28,4 @@ def result_pipeline(files: np.array) -> str:
     return json, rules
 
 if __name__ == '__main__':
-    print(result_pipeline())
+    print(result_pipeline(None))
