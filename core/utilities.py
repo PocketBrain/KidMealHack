@@ -1,7 +1,20 @@
 from docx.shared import Inches
+from skimage import exposure
+import numpy as np
 
-a4_width = Inches(210/25.4)
-a4_height = Inches(297/25.4)
+a4_width = Inches(210 / 25.4)
+a4_height = Inches(297 / 25.4)
+
+
+def preprocess_image(image_np):
+    try:
+        image_eq = exposure.equalize_adapthist(image_np)
+        v_min, v_max = np.percentile(image_eq, (0.2, 99.8))
+        image_contrast = exposure.rescale_intensity(image_eq, in_range=(v_min, v_max))
+        return image_contrast
+
+    except Exception as e:
+        print("Ошибка обработки изображения:", e)
 
 
 def pixels_to_inches(pixels, dpi):
@@ -59,7 +72,7 @@ def add_paragraph(doc, text, left_indent, space_before, font_size):
     """
     if text:
         paragraph = doc.add_paragraph(text)
-        
+
         if paragraph.runs:
             paragraph.runs[0].font.size = font_size
             paragraph.paragraph_format.left_indent = left_indent

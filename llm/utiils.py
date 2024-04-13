@@ -1,8 +1,6 @@
 import json
 from llama_cpp import Llama
-from constant import SYSTEM_PROMPT, SYSTEM_TOKEN, USER_TOKEN, BOT_TOKEN, LINEBREAK_TOKEN, ROLE_TOKENS
-
-
+from constant import SYSTEM_PROMPT, BOT_TOKEN, LINEBREAK_TOKEN, ROLE_TOKENS
 
 
 def parse_json_string(json_str: str) -> dict:
@@ -35,7 +33,7 @@ def get_system_tokens(model):
 def interact(
     model_path,
     user_prompt,
-    n_ctx=2000,
+    n_ctx=4096,
     top_k=30,
     top_p=0.9,
     temperature=0.2,
@@ -43,6 +41,8 @@ def interact(
 ):
     model = Llama(
         model_path=model_path,
+        n_gpu_layers=-1,
+        n_batch=512,
         n_ctx=n_ctx,
         n_parts=1,
     )
