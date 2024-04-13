@@ -27,5 +27,5 @@ def result_pipeline(files: np.array) -> str:
     rules, json = pipeline(text_from_ocr)
     return json, rules
 
-
-print(result_pipeline())
+if __name__ == '__main__':
+    print(result_pipeline())
