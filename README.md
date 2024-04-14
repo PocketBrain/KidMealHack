@@ -34,5 +34,5 @@
 1. [Шатохим Максим](https://github.com/MRX1078) - Капитан Команды & Fullstack developer 
 2. [Чесников Леонид](https://github.com/RebelRaider) - AI-Engineer
 3. [Пискленов Тимофей](https://github.com/PocketBrain) - AI-Engineer
-4. [Школенко Кирилл](https://github.com/Ykropchick) - Backend developer
-5. [Мелихова Диана](https://github.com/) - Designer
+4. [Школенко Кирилл](https://github.com/) - Backend developer
+5. [Мелихова Диана](https://github.com/diankakura) - Designer
