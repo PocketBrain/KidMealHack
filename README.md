@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="foodscan_logo.png" width="300%" height="300%">
+  <img src="foodscan_logo.png" width="250%" height="250%">
 </p>
 
 # FoodScan
