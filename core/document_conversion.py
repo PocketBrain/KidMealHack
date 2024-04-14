@@ -1,9 +1,8 @@
 from PIL import Image
 import io
-import zipfile
+from typing import List
 
-
-def png_to_images(data: bytes) -> list[Image.Image]:
+def png_to_images(data: bytes) -> List[Image.Image]:
     """
     Преобразует PNG-данные в список изображений в формате PIL.Image.Image.
 
@@ -18,7 +17,7 @@ def png_to_images(data: bytes) -> list[Image.Image]:
         return []
 
 
-def extract_images(files: [bytes]) -> list[Image.Image]:
+def extract_images(files: List[bytes]) -> List[Image.Image]:
     """
     Извлекает изображения из словаря файлов.
 

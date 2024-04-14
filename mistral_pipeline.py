@@ -7,8 +7,13 @@ import numpy as np
 from PIL import Image
 import io
 
-def get_data():
-    # Удалить путь, и поставить на вход np.array
+def get_data() -> bytes:
+    """
+    Получает данные изображения и возвращает их в формате PNG.
+
+    Возвращает:
+    bytes: Байтовое представление изображения в формате PNG.
+    """
     file_path = "test_files/Йогурт Агуша с персиком с 8 месяцев 2.7% 200 г.jpg"
     image_np = np.array(Image.open(file_path))
     image_np = preprocess_image(image_np)
@@ -19,6 +24,12 @@ def get_data():
     return files
 
 def result_pipeline() -> str:
+    """
+    Выполняет пайплайн обработки изображения и генерации ответа.
+
+    Возвращает:
+    str: Сгенерированный ответ.
+    """
     files = get_data()
     images = extract_images(files=[files])
     text_from_ocr = generate_output_text(images)
@@ -26,5 +37,5 @@ def result_pipeline() -> str:
     result_answer = interact(model_path=MODEL_PATH, user_prompt=FROM_JSON_2_RULE_PROMPT + result_answer_llm_json)
     return result_answer
 
-
-result_text = result_pipeline()
+if __name__ == "__main__":
+    print(result_pipeline())
