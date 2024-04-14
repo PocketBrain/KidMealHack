@@ -1,7 +1,3 @@
-Конечно! Вот обновленный вариант README с дополнительными маркетинговыми фишками:
-
----
-
 <p align="center">
   <img src="images/foodscan_logo.png">
 </p>
